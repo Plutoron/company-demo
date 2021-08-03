@@ -23,7 +23,7 @@ const Header: React.FC<{ active?: string }>  = ({ active }) => {
         <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
           <ul className="navbar-nav flex-row flex-wrap">
             <li className="nav-item col-12 col-md-auto">
-              <Link className={`nav-link${active === '' ? ' active' : ''}`} to="/">首页</Link>
+              <Link className={`nav-link${active === 'home' ? ' active' : ''}`} to="/home">首页</Link>
             </li>
             <li className="nav-item col-12 col-md-auto">
               <Link className={`nav-link${active === 'infos' ? ' active' : ''}`} to="/infos">企业资讯</Link>
