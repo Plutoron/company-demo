@@ -1,8 +1,9 @@
-import React, { lazy, Suspense } from 'react'
+import React, { lazy, Suspense, useEffect } from 'react'
 import {
   BrowserRouter as Router,
   Switch,
   Route,
+  Redirect,
   useLocation
 } from "react-router-dom"
 
@@ -22,6 +23,9 @@ const About = lazy(() => import('@pages/About'))
 const Routers = () => {
   let { pathname } = useLocation(); 
   console.log(location)
+
+  document.body.scrollIntoView()
+
   return (
     <>
       <Header active={pathname.slice(1)}></Header>
@@ -36,9 +40,11 @@ const Routers = () => {
         <Route path="/solutions">
           <Solutions />
         </Route>
-        <Route path="/">
+        <Route path="/home">
           <Home />
         </Route>
+
+        <Redirect to="/home" />
       </Switch>
 
       <Footer />
