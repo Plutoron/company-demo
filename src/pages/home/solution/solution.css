@@ -1,0 +1,12 @@
+.solution .card {
+  height: 12.5rem /* 200/16 */;
+}
+
+.solution .card img{
+  width: 100%;
+  height: 100%;
+}
+
+.solution .solution-name {
+  color: #fff;
+}

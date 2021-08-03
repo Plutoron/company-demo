@@ -1,0 +1,21 @@
+.custom-footer {
+  margin-top: 1.5rem /* 24/16 */;
+  background-color: #495057;
+  color: #bdc3c7;
+  padding-top: 1rem /* 16/16 */;
+  padding-left: .75rem;
+  padding-right: .75rem;
+}
+
+.custom-footer .left .qrcode-wrap {
+  margin-right: 1rem /* 16/16 */;
+}
+
+.custom-footer .left .qrcode {
+  width: 9.375rem /* 150/16 */;
+  height: 9.375rem /* 150/16 */;
+}
+
+.custom-footer .backup {
+  padding-bottom: .75rem /* 12/16 */;
+}
