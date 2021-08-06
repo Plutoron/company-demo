@@ -17,7 +17,7 @@ module.exports = (env, argv) => {
       path: outputPath,
       filename: isDEV ? '[name].js' : 'js/[name].[contenthash].js',
       chunkFilename: isDEV ? '[name].js' : 'js/[name].[contenthash].js',
-      publicPath: '/',
+      publicPath: isDEV ? '/' : './',
     },
     devServer: {
       historyApiFallback: true,
