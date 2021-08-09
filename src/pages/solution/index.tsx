@@ -109,7 +109,7 @@ const renderSolutionItem: React.FC<SolutionItem[]> = (data) => {
   )
 }
 
-function Solutions() {
+function Solution() {
   const [ builds, setBuilds ] = useState<SolutionItem[]>([])
   const [ manages, setManages ] = useState<SolutionItem[]>([])
   const [ protects, setProtects ] = useState<SolutionItem[]>([])
@@ -122,7 +122,7 @@ function Solutions() {
 
   return (
     <>
-      <div className="solutions block-wrap ">
+      <div className="solutions block-wrap">
         <div className="text-center fs-4">
           <span className="home-block-title">建设类</span>
         </div>
@@ -145,4 +145,4 @@ function Solutions() {
   )
 }
 
-export default Solutions
+export default Solution

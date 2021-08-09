@@ -10,15 +10,11 @@ import {
 import Header from '@components/header'
 import Footer from '@components/footer'
 
-// import Home from '@pages/home'
-// import Infos from '@pages/infos'
-// import Solutions from '@pages/solutions'
-// import About from '@pages/about'
-
 const Home = lazy(() => import('@pages/home'))
-const Infos = lazy(() => import('@pages/Infos'))
-const Solutions = lazy(() => import('@pages/solutions'))
-const About = lazy(() => import('@pages/About'))
+const Info = lazy(() => import('@src/pages/info'))
+const InfoDetail = lazy(() => import('@pages/info-detail'))
+const Solution = lazy(() => import('@pages/solution'))
+const About = lazy(() => import('@pages/about'))
 
 const Routers = () => {
   let { pathname } = useLocation(); 
@@ -28,24 +24,29 @@ const Routers = () => {
 
   return (
     <>
-      <Header active={pathname.slice(1)}></Header>
+      <Header active={pathname.split('/')[1]}></Header>
 
-      <Switch>
-        <Route path="/about">
-          <About />
-        </Route>
-        <Route path="/infos">
-          <Infos />
-        </Route>
-        <Route path="/solutions">
-          <Solutions />
-        </Route>
-        <Route path="/home">
-          <Home />
-        </Route>
+      <div className="content-wrap">
+        <Switch>
+          <Route path="/about">
+            <About />
+          </Route>
+          <Route path="/info/:infoId">
+            <InfoDetail />
+          </Route>
+          <Route path="/info">
+            <Info />
+          </Route>
+          <Route path="/solution">
+            <Solution />
+          </Route>
+          <Route path="/home">
+            <Home />
+          </Route>
 
-        <Redirect to="/home" />
-      </Switch>
+          <Redirect to="/home" />
+        </Switch>
+      </div>
 
       <Footer />
     </>

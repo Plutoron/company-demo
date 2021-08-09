@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import { SolutionItem } from '@pages/solutions/index'
+import { SolutionItem } from '@src/pages/solution/index'
 import './solution.css'
-
 
 const mock = [{
   id: 1,

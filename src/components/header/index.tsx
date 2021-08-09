@@ -26,10 +26,10 @@ const Header: React.FC<{ active?: string }>  = ({ active }) => {
               <Link className={`nav-link${active === 'home' ? ' active' : ''}`} to="/home">首页</Link>
             </li>
             <li className="nav-item col-12 col-md-auto">
-              <Link className={`nav-link${active === 'infos' ? ' active' : ''}`} to="/infos">企业资讯</Link>
+              <Link className={`nav-link${active === 'info' ? ' active' : ''}`} to="/info">企业资讯</Link>
             </li>
             <li className="nav-item col-12 col-md-auto">
-              <Link className={`nav-link${active === 'solutions' ? ' active' : ''}`} to="/solutions">企业案例</Link>
+              <Link className={`nav-link${active === 'solution' ? ' active' : ''}`} to="/solution">企业案例</Link>
             </li>
             <li className="nav-item col-12 col-md-auto">
               <Link className={`nav-link${active === 'about' ? ' active' : ''}`} to="/about">关于我们</Link>
