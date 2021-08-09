@@ -5,6 +5,11 @@ body {
   overflow-x: hidden;
 }
 
+.content-wrap {
+  min-height: calc(100vh - 4.0625rem - 15.625rem);
+  padding-bottom: 1rem /* 16/16 */;
+}
+
 .block-wrap {
   padding-left: .75rem;
   padding-right: .75rem;
@@ -16,6 +21,22 @@ body {
   margin-bottom: 1rem /* 16/16 */;
   padding-bottom: .75rem /* 12/16 */;
   border-bottom: .375rem /* 6/16 */ solid #479f76;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #479f76;
+}
+
+.text-ellis {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  word-break: break-all;
 }
 .custom-header {
   height: 4.0625rem /* 65/16 */;
@@ -37,12 +58,13 @@ body {
 }
 
 .custom-footer {
-  margin-top: 1.5rem /* 24/16 */;
   background-color: #495057;
   color: #bdc3c7;
   padding-top: 1rem /* 16/16 */;
   padding-left: .75rem;
   padding-right: .75rem;
+  min-height: 15.625rem /* 250/16 */;
+  box-sizing: border-box;
 }
 
 .custom-footer .left .qrcode-wrap {

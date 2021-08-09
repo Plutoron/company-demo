@@ -1,0 +1,14 @@
+.info-detail .nav {
+  height: 5.625rem /* 90/16 */;
+  line-height: 5.625rem /* 90/16 */;
+  border-bottom: 1px solid #ddd;
+}
+
+.info-detail .nav a{
+  color: #479f76;
+}
+
+.info-detail .nav .split{
+  margin-left: 10px;
+  margin-right: 10px;
+}

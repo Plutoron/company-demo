@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebpack5_react_basic_ts=self.webpackChunkwebpack5_react_basic_ts||[]).push([[99],{99:(e,a,c)=>{c.r(a),c.d(a,{default:()=>s});var t=c(294);const s=function(){return t.createElement(t.Fragment,null,t.createElement("div",{className:"block-wrap"},"资讯"))}}}]);
