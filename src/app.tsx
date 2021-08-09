@@ -56,7 +56,7 @@ const Routers = () => {
 export default function App() {
   return (
     <Suspense fallback={<div className="text-center"></div>}>
-      <Router>
+      <Router basename="/company-demo">
         <Routers />
       </Router>
     </Suspense>
