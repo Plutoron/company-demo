@@ -1,6 +1,6 @@
-import React, { lazy, Suspense, useEffect } from 'react'
+import React, { lazy, Suspense } from 'react'
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Switch,
   Route,
   Redirect,
@@ -56,7 +56,7 @@ const Routers = () => {
 export default function App() {
   return (
     <Suspense fallback={<div className="text-center"></div>}>
-      <Router basename="/company-demo">
+      <Router>
         <Routers />
       </Router>
     </Suspense>
