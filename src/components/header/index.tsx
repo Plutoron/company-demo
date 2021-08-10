@@ -1,8 +1,12 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { Link } from 'react-router-dom'
 import './index.css'
  
 const Header: React.FC<{ active?: string }>  = ({ active }) => {
+  useEffect(() => {
+    const dom = document.querySelector('#navbarNav')
+    dom?.classList.contains('show') && dom?.classList.remove('show')
+  })
 
   return (
     <header className="navbar navbar-expand-md fixed-top navbar-dark custom-header">
