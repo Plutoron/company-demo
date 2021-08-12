@@ -1,5 +1,5 @@
 const path = require('path')
-const webpack = require('webpack')
+const TerserPlugin = require('terser-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
@@ -29,26 +29,25 @@ module.exports = (env, argv) => {
     },
     optimization: {
       splitChunks: {
-        chunks: 'async',
-        minSize: 0,
-        minRemainingSize: 0,
-        maxSize: 30000,
-        minChunks: 1,
-        maxAsyncRequests: 6,
-        maxInitialRequests: 4,
-        automaticNameDelimiter: '~',
+        name: false,
         cacheGroups: {
-          defaultVendors: {
-            test: /[\\/]node_modules[\\/]/,
-            priority: -10
-          },
-          default: {
+          common: {
+            test: /[\\/]node_modules[\\/] || src\//,
+            chunks: 'all',
+            name: 'common',
+            minSize: 0,
             minChunks: 2,
-            priority: -20,
-            reuseExistingChunk: true
-          }
-        }
-      }
+            priority: 10, //优先级
+            enforce: true,
+          },
+        },
+      },
+      minimizer: [ 
+        ...(isDEV ? [] : [
+          new TerserPlugin({
+            parallel: true,
+          }),
+		  	])],
     },
     module: {
       rules: [
