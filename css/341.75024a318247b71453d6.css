@@ -12,3 +12,9 @@
   margin-left: 10px;
   margin-right: 10px;
 }
+
+.info-detail .info-content-wrap {
+  width: 100%;
+  max-width: 750px;
+  margin: 0 auto;
+}
