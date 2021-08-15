@@ -27,7 +27,9 @@ function InfoDetail() {
           <span className="home-block-title">{info?.title}</span>
         </div>
 
-        { info?.content }
+        <div className="info-content-wrap">
+          { info?.content }
+        </div>
       </div>
     </>
   )

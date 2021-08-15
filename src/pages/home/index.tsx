@@ -9,7 +9,7 @@ function Home() {
   return (
     <>
       <Carousel />
-      <div className="block-wrap">
+      <div className="block-wrap pb1">
         <About />
         <Solution />
         <Info />

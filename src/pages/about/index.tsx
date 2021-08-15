@@ -1,15 +1,16 @@
 import React from 'react'
 
 import HomeAbout from '@pages/home/about'
-import Honor from './honor'
+import Group from './group'
+import Culture from './culture'
 
 function About() {
   return (
     <>
-      <div className="block-wrap">
+      <div className="block-wrap pb1">
         <HomeAbout />
-
-        <Honor />
+        <Group />
+        <Culture />
       </div>
     </>
   )

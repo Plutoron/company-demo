@@ -14,6 +14,8 @@ const Home = lazy(() => import('@pages/home'))
 const Info = lazy(() => import('@src/pages/info'))
 const InfoDetail = lazy(() => import('@pages/info-detail'))
 const Solution = lazy(() => import('@pages/solution'))
+const Honor = lazy(() => import('@pages/honor'))
+const Hire = lazy(() => import('@pages/hire'))
 const About = lazy(() => import('@pages/about'))
 
 const Routers = () => {
@@ -30,6 +32,12 @@ const Routers = () => {
         <Switch>
           <Route path="/about">
             <About />
+          </Route>
+          <Route path="/honor">
+            <Honor />
+          </Route>
+          <Route path="/hire">
+            <Hire />
           </Route>
           <Route path="/info/:infoId">
             <InfoDetail />

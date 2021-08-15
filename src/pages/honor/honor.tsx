@@ -31,11 +31,10 @@ function Honor() {
 
   return (
     <>
-      <div className="block-wrap">
-        <div className="text-center fs-4">
+      <div className="pt1 pb1">
+        {/* <div className="text-center fs-4">
           <span className="home-block-title">荣誉资质</span>
-        </div>
-
+        </div> */}
         <div className="row g-2 g-sm-3">
           {
             honorList.map(({ imgUrl, desc }) => {

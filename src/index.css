@@ -7,6 +7,13 @@ body {
 
 .content-wrap {
   min-height: calc(100vh - 4.0625rem - 15.625rem);
+}
+
+.pt1 {
+  padding-top: 1rem /* 16/16 */;
+}
+
+.pb1 {
   padding-bottom: 1rem /* 16/16 */;
 }
 

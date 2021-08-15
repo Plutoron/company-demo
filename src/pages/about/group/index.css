@@ -1,0 +1,8 @@
+.home-group img{
+  width: 100%;
+  min-width: 450px;
+}
+
+.home-group .group-img-wrap{
+  overflow-x: auto;
+}
