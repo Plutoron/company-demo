@@ -18,3 +18,9 @@
   max-width: 750px;
   margin: 0 auto;
 }
+
+.info-detail .news-time {
+  font-size: 18px;
+  font-weight: normal;
+  color: #666;
+}

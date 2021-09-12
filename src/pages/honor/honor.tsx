@@ -1,49 +1,40 @@
 import React, { useEffect, useState } from 'react'
+import './honor.css'
 
 interface honorItem {
-  desc: string,
-  imgUrl: string
+  title: string,
+  img: string
 }
 
-const mock = [{
-  desc: '高新技术企业证书1',
-  imgUrl: 'http://nwzimg.wezhan.cn/contents/sitefiles2038/10192359/images/15330427.jpg'
-}, {
-  desc: '高新技术企业证书2',
-  imgUrl: 'http://nwzimg.wezhan.cn/contents/sitefiles2038/10192359/images/15330427.jpg'
-}, {
-  desc: '高新技术企业证书3',
-  imgUrl: 'http://nwzimg.wezhan.cn/contents/sitefiles2038/10192359/images/15330427.jpg'
-}, {
-  desc: '高新技术企业证书4',
-  imgUrl: 'http://nwzimg.wezhan.cn/contents/sitefiles2038/10192359/images/15330427.jpg'
-}, {
-  desc: '高新技术企业证书5',
-  imgUrl: 'http://nwzimg.wezhan.cn/contents/sitefiles2038/10192359/images/15330427.jpg'
-},]
-
-function Honor() {
+const Honor = ({ data }) => {
   const [ honorList, setHonorList ] = useState<honorItem[]>([])
 
   useEffect(() => {
-    setHonorList(mock)
-  }, [])
+    setHonorList(data)
+  }, [data])
+
+  useEffect(() => {
+    const imgs = document.querySelectorAll('.honor-img')
+
+    if (imgs.length > 0) {
+      imgs.forEach(v => {
+        v.style.height = v.clientWidth / 16 * 9 + 'px'
+      })
+    }
+  }, [honorList])
 
   return (
     <>
-      <div className="pt1 pb1">
-        {/* <div className="text-center fs-4">
-          <span className="home-block-title">荣誉资质</span>
-        </div> */}
+      <div className="pt1 pb1 honor-block">
         <div className="row g-2 g-sm-3">
           {
-            honorList.map(({ imgUrl, desc }) => {
+            honorList.map(({ img, title }) => {
               return (
-                <div className="col-6 col-sm-3 text-center" key={desc}>
+                <div className="col-6 col-sm-3 text-center" key={title}>
                   <div className="card">
-                    <img src={imgUrl} className="card-img-top" />
+                    <img src={img} className="card-img-top honor-img" />
                     <div className="card-body">
-                      <p className="card-text">{desc}</p>
+                      <p className="card-text">{title}</p>
                     </div>
                   </div>
                 </div>

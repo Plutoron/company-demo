@@ -1,11 +1,22 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
+import { get } from '@util/http'
 import './index.css'
 
 function Culture() {
-  const [ groupImg, setGroupImg ] = useState<string>()
+  const [ data, setData ] = useState<string>()
+
+  const getData = useCallback(async () => {
+    try {
+      const res = await get('culture')
+      console.log(res)
+      setData(res.html)
+    } catch (e) {
+
+    }
+  }, [])
 
   useEffect(() => {
-    setGroupImg('http://www.cnpiecsb.com/upload/images/introduce/20200410/a5e21b2e0ba7b3437a7cf80723574bbd.png')
+    getData()
   }, [])
 
   return (
@@ -14,9 +25,10 @@ function Culture() {
         <span className="home-block-title">企业文化</span>
       </div>
 
-      <div className="group-img-wrap text-center">
-        {/* <img src={groupImg} alt="" /> */}
-        这里是富文本 / 或者纯文本
+      <div 
+        className="culture-wrap" 
+        dangerouslySetInnerHTML={{ __html: data }}
+      >
       </div>
     </div>
   )

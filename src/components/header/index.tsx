@@ -1,8 +1,25 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState, useCallback } from "react"
 import { Link } from 'react-router-dom'
+import { get } from '@util/http'
 import './index.css'
  
 const Header: React.FC<{ active?: string }>  = ({ active }) => {
+  const [ data, setData ] = useState({})
+
+  const getData = useCallback(async () => {
+    try {
+      const res = await get('company/detail')
+      console.log(res)
+      setData(res)
+    } catch (e) {
+
+    }
+  }, [])
+
+  useEffect(() => {
+    getData()
+  }, [])
+
   useEffect(() => {
     const dom = document.querySelector('#navbarNav')
     dom?.classList.contains('show') && dom?.classList.remove('show')
@@ -13,13 +30,13 @@ const Header: React.FC<{ active?: string }>  = ({ active }) => {
       <nav className="container container-xxl flex-wrap flex-md-nowrap">
         <Link className="navbar-brand d-flex" to="/">
           <img 
-            src="https://zhengxin-pub.cdn.bcebos.com/logopic/80d1e985824bcf1d3c6cfdcef52d0750_fullsize.jpg?x-bce-process=image/resize,m_lfit,w_300" 
+            src={data.logo}
             alt="" 
             height="33" 
             className="d-inline-block align-text-top" 
           />
 
-          <span>上海成事林业</span>
+          <span className="ml8">{data.name}</span>
         </Link>
         <button className="navbar-toggler btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
@@ -30,7 +47,7 @@ const Header: React.FC<{ active?: string }>  = ({ active }) => {
               <Link className={`nav-link${active === 'home' ? ' active' : ''}`} to="/home">首页</Link>
             </li>
             <li className="nav-item col-12 col-md-auto">
-              <Link className={`nav-link${active === 'info' ? ' active' : ''}`} to="/info">公司动态</Link>
+              <Link className={`nav-link${active === 'news' ? ' active' : ''}`} to="/news">公司动态</Link>
             </li>
             <li className="nav-item col-12 col-md-auto">
               <Link className={`nav-link${active === 'honor' ? ' active' : ''}`} to="/honor">资质荣誉</Link>

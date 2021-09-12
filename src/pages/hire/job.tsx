@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './job.css'
 
-function Job() {
-  const [ detail, setDetail ] = useState<string>()
-
+function Job({ data }) {
   useEffect(() => {
 
   }, [])
@@ -11,8 +9,8 @@ function Job() {
   return (
     <>
       <div className="block-wrap">
-        <div className="hire-detail">
-          <span className="">这个是富文本这个是富文本这个是富文本这个是富文本这个是富文本这个是富文本这个是富文本这个是富文本这个是富文本这个是富文本这个是富文本这个是富文本这个是富文本这个是富文本这个是富文本这个是富文本这个是富文本这个是富文本这个是富文本这个是富文本这个是富文本这个是富文本这个是富文本这个是富文本这个是富文本这个是富文本这个是富文本这个是富文本这个是富文本这个是富文本</span>
+        <div className="hire-detail" dangerouslySetInnerHTML={{ __html: data }}>
+    
         </div>
       </div>
     </>

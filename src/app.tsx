@@ -11,8 +11,8 @@ import Header from '@components/header'
 import Footer from '@components/footer'
 
 const Home = lazy(() => import('@pages/home'))
-const Info = lazy(() => import('@src/pages/info'))
-const InfoDetail = lazy(() => import('@pages/info-detail'))
+const News = lazy(() => import('@src/pages/news'))
+const NewsDetail = lazy(() => import('@pages/news-detail'))
 const Solution = lazy(() => import('@pages/solution'))
 const Honor = lazy(() => import('@pages/honor'))
 const Hire = lazy(() => import('@pages/hire'))
@@ -39,11 +39,11 @@ const Routers = () => {
           <Route path="/hire">
             <Hire />
           </Route>
-          <Route path="/info/:infoId">
-            <InfoDetail />
+          <Route path="/news/:id">
+            <NewsDetail />
           </Route>
-          <Route path="/info">
-            <Info />
+          <Route path="/news">
+            <News />
           </Route>
           <Route path="/solution">
             <Solution />

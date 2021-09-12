@@ -17,6 +17,14 @@ body {
   padding-bottom: 1rem /* 16/16 */;
 }
 
+.ml8 {
+  margin-left: .5rem /* 8/16 */;
+}
+
+.mr8 {
+  margin-right: .5rem /* 8/16 */;
+}
+
 .block-wrap {
   padding-left: .75rem;
   padding-right: .75rem;
