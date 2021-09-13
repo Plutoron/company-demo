@@ -70,6 +70,14 @@ module.exports = (env, argv) => {
             'css-loader',
           ]
         },
+        {
+          test: /\.(png|jpe?g|gif)$/i,
+          use: [
+            {
+              loader: 'file-loader',
+            },
+          ],
+        },
       ]
     },
     resolve: {
@@ -79,6 +87,7 @@ module.exports = (env, argv) => {
         '@pages': path.resolve(__dirname, 'src/pages'),
         '@components': path.resolve(__dirname, 'src/components'),
         '@util': path.resolve(__dirname, 'src/util'),
+        '@images': path.resolve(__dirname, 'src/images'),
       }
     },
     plugins: [

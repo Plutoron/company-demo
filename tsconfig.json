@@ -30,6 +30,9 @@
       "@util/*": [
         "src/util/*"
       ],
+      "@images/*": [
+        "src/images/*"
+      ],
     }
   }
 }
