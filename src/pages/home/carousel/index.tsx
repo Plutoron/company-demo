@@ -1,19 +1,36 @@
-import React from 'react'
+import React, { useCallback, useState, useEffect } from 'react'
+import { get } from '@util/http'
 import './carousel.css'
 
 function Carousel() {
+  const [data, setData] = useState([]);
+
+  const getData = useCallback(async () => {
+    try {
+      const res = await get(`banner`)
+      console.log(res)
+      setData(res)
+    } catch (e) {
+
+    }
+  }, [])
+
+  useEffect(() => {
+    getData()
+  }, [])
+
   return (
     <div id="carouselExampleControls" className="banner carousel slide" data-bs-ride="carousel">
       <div className="carousel-inner">
-        <div className="carousel-item active">
-          <img src="https://t7.baidu.com/it/u=931123624,502354944&fm=193&f=GIF" className="d-block w-100" />
-        </div>
-        <div className="carousel-item">
-          <img src="https://t7.baidu.com/it/u=931123624,502354944&fm=193&f=GIF" className="d-block w-100" />
-        </div>
-        <div className="carousel-item">
-          <img src="https://t7.baidu.com/it/u=931123624,502354944&fm=193&f=GIF" className="d-block w-100" />
-        </div>
+        {
+          data.map((v, i) => {
+            return (
+              <div className={i === 0 ? "carousel-item active" : "carousel-item"}>
+                <img src={v.img} className="d-block w-100" />
+              </div>
+            )
+          })
+        } 
       </div>
       <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
         <span className="carousel-control-prev-icon" aria-hidden="true"></span>
