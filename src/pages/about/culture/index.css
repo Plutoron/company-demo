@@ -1,7 +1,3 @@
-.home-group img{
-  width: 100%;
-}
-
 .culture-wrap {
   width: 100%;
   max-width: 750px;
@@ -10,4 +6,5 @@
   padding: 8px;
   margin: 0 auto;
   word-break: break-all;
+  overflow: auto;
 }

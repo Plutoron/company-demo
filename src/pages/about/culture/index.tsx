@@ -20,7 +20,7 @@ function Culture() {
   }, [])
 
   return (
-    <div className="home-group">
+    <div className="">
       <div className="text-center fs-4">
         <span className="home-block-title">企业文化</span>
       </div>
